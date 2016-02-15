@@ -1,38 +1,34 @@
-module SiPrefix
-  def senti
-    10 ** -2
+module SIPrefix
+  def centi
+    100
   end
 
-  def kilo
-    10 ** 3
-  end
-
-  def tonna
-    10 ** -6
+  def ton
+    1000
   end
 
   def kilobyte
-    2 ** 10
+      1024
   end
 end
 
 class UnitConverter
-  include SiPrefix
+  include SIPrefix
 
-  def centimeters_in_meters(numb)
-    numb.to_f * senti
+  def centimeters_in_meters(num)
+    num.to_i / centi
   end
 
-  def kilogramm_in_tona(numb)
-    (numb.to_f * kilo) * tonna
+  def kilogramm_in_ton(num)
+    num.to_i /  ton
   end
 
-  def kilobyte_in_byte(numb)
-    numb.to_i * kilobyte
+  def kilobyte_in_byte(num)
+    num.to_i / kilobyte
   end
 end
 
 my_converter = UnitConverter.new
-puts my_converter.centimeters_in_meters(10).round(2)
-puts my_converter.kilogramm_in_tona(100).round(2)
-puts my_converter.kilobyte_in_byte(2)
+puts my_converter.centimeters_in_meters(0)
+puts my_converter.kilogramm_in_ton(0)
+puts my_converter.kilobyte_in_byte(0)
