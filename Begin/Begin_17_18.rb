@@ -1,3 +1,7 @@
+#17) Three points A, B, C are given on the real axis. Find the length of AC, the length of BC, and the sum of these lengths.
+#18) Three points A, B, C are given on the real axis, the point C is located between the points A and B.
+# Find the product of the length of AC and the length of BC.
+
 class RealAxis
   def initialize(a, b, c)
     @point_a = a.to_i

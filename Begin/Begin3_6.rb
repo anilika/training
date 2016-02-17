@@ -1,3 +1,6 @@
+#3) The sides a and b of a rectangle are given. Find the area S = a·b and the perimeter P = 2·(a + b) of the rectangle.
+#6) The edges a, b, c of a right parallelepiped are given. Find the volume V = a·b·c and the surface area S = 2·(a·b + b·c + a·c) of the right parallelepiped.
+
 class Rectangle
   def initialize(*sides)
     @side_1, @side_2 = sides[0].to_f, sides[1].to_f

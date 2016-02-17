@@ -1,3 +1,8 @@
+#31) A Fahrenheit temperature T is given. Convert it into a centigrade temperature.
+# The centigrade temperature TC and the Fahrenheit temperature TF are connected as: TC = (TF − 32)·5/9.
+#32) A centigrade temperature T is given. Convert it into a Fahrenheit temperature.
+# The centigrade temperature TC and the Fahrenheit temperature TF are connected as: TC = (TF − 32)·5/9.
+
 class ConvertTemperature
   def initialize(temperature, scale)
     @t = temperature.to_f

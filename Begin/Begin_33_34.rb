@@ -1,3 +1,8 @@
+#33) X kg of sweet cost A euro. Find the cost of 1 kg and Y kg of the sweets (positive numbers X, A, Y are given).
+#34) X kg of chocolates cost A euro and Y kg of sugar candies cost B euro (positive numbers X, A, Y, B are given).
+# Find the cost of 1 kg of the chocolates and the cost of 1 kg of the sugar candies.
+# Also determine how many times the chocolates are more expensive than the sugar candies.
+
 module CostCounting
   def price_1_kg(amount, cost)
     cost / amount

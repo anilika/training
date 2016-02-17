@@ -12,6 +12,16 @@ module SIPrefix
   end
 end
 
+#1)  A distance L is given in centimeters.
+# Find the amount of full meters of this distance (1 m = 1000 cm).
+# Use the operator of integer division.
+#2) A weight M is given in kilograms.
+# Find the amount of full tons of this weight (1 ton = 1000 kg).
+# Use the operator of integer division.
+#3) A file size is given in bytes.
+# Find the amount of full Kbytes of this size (1 K = 1024 bytes).
+# Use the operator of integer division.
+
 class UnitConverter
   include SIPrefix
 

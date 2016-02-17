@@ -1,3 +1,22 @@
+#6) A two-digit integer is given. Output its left digit (a tens digit) and then its right digit (a ones digit).
+# Use the operator of integer division for obtaining the tens digit and the operator of taking remainder for obtaining the ones digit.
+#7) A two-digit integer is given. Find the sum and the product of its digits.
+#8) A two-digit integer is given. Output an integer obtained from the given one by exchange of its digits.
+#9) A three-digit integer is given. Using one operator of integer division find first digit of the given integer (a hundreds digit).
+#10) A three-digit integer is given. Output its last digit (a ones digit) and then its middle digit (a tens digit).
+#11) A three-digit integer is given. Find the sum and the product of its digits.
+#12) A three-digit integer is given. Output an integer obtained from the given one by reading it from right to left.
+#13) A three-digit integer is given. Output an integer obtained from the given one by moving its left digit to the right side.
+#14) A three-digit integer is given. Output an integer obtained from the given one by moving its right digit to the left side.
+#15) A three-digit integer is given. Output an integer obtained from the given one by exchange a tens digit and a hundreds digit
+# (for example, 123 will be changed to 213).
+#16) A three-digit integer is given. Output an integer obtained from the given one by exchange a ones digit and a tens digit
+# (for example, 123 will be changed to 132).
+#17) An integer greater than 999 is given. Using one operator of integer division and one operator of taking the remainder
+# find a hundreds digit of the given integer.
+#18) An integer greater than 999 is given. Using one operator of integer division and one operator of taking the remainder
+# find a thousands digit of the given integer.
+
 module OutputData
   def print_num(num)
     puts "\nYour number is #{num}."

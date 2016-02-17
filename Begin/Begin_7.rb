@@ -1,3 +1,5 @@
+#7) Given the radius R of a circle, find the length L of the circumference and the area S of the circle: L = 2·π·R, S = π·R2.
+
 class Circle
   include Math
 

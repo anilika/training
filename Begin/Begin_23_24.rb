@@ -1,3 +1,8 @@
+#23) Variables A, B, C are given. Change values of the variables by moving the given value of A into the variable B,
+# the given value of B into the variable C, and the given value of C into the variable A. Output the new values of A, B, C.
+#24) Variables A, B, C are given. Change values of the variables by moving the given value of A into the variable C,
+# the given value of C into the variable B, and the given value of B into the variable A. Output the new values of A, B, C.
+
 class Variables
   attr_reader :a, :b, :c
 

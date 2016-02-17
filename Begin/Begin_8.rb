@@ -1,3 +1,12 @@
+#8) Given two numbers a and b, find their average: (a + b)/2.
+#9) Given two nonnegative numbers a and b, find their geometrical mean (a square root of their product): (a·b)**1/2.
+#10) Two nonzero numbers are given. Find the sum, the difference, the product, and the quotient of their squares.
+#11) Two nonzero numbers are given. Find the sum, the difference, the product, and the quotient of their absolute values.
+#12) The legs a and b of a right triangle are given. Find the hypotenuse c and the perimeter P of the triangle: c = (a2 + b2)1/2, P = a + b + c.
+#13) Given the radiuses R1 and R2 of two concentric circles (R1 > R2), find the areas S1 and S2 of the circles and the area S3 of the ring bounded by the circles:
+#                 S1 = π·(R1)2,        S2 = π·(R2)2,        S3 = S1 − S2.
+
+
 class TwoNumbers
   def initialize(num_one, num_two)
     @num_one = num_one.to_f

@@ -1,3 +1,14 @@
+#19) From the beginning of the day N seconds have passed (N is integer).
+# Find an amount of full minutes passed from the beginning of the day.
+#20) From the beginning of the day N seconds have passed (N is integer).
+# Find an amount of full hours passed from the beginning of the day.
+#21) From the beginning of the day N seconds have passed (N is integer).
+# Find an amount of seconds passed from the beginning of the last minute.
+#22) From the beginning of the day N seconds have passed (N is integer).
+# Find an amount of seconds passed from the beginning of the last hour.
+#23) From the beginning of the day N seconds have passed (N is integer).
+# Find an amount of full minutes passed from the beginning of the last hour.
+
 module SecondsConvert
   attr_reader :seconds
   MINUTE = 60

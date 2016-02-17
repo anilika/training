@@ -1,3 +1,7 @@
+#1) Given the side a of a square, find the perimeter P of the square: P = 4·a
+#2) Given the side a of a square, find the area S of the square: S = a2.
+#3) Given the edge a of a cube, find the volume V = a3 and the surface area S = 6·a2 of the cube.
+
 class Square
   def initialize(side)
     @side = side.to_f

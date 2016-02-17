@@ -1,3 +1,10 @@
+#19) The coordinates (x1, y1) and (x2, y2) of two opposite vertices of a rectangle are given. Sides of the rectangle are parallel to coordinate axes.
+# Find the perimeter and the area of the rectangle.
+#20) The coordinates (x1, y1) and (x2, y2) of two points are given. Find the distance between the points: ((x2 − x1)2 + (y2 − y1)2)1/2.
+#21) The coordinates (x1, y1), (x2, y2), (x3, y3) of the triangle vertices are given.
+# Find the perimeter and the area of the triangle using the formula for distance between two points in the plane (see Begin20).
+# The area of a triangle with sides a, b, c can be found by Heron formula: S = (p·(p − a)·(p − b)·(p − c))1/2,
+
 class Coordinates
   def length_segment(coordinate_point_one, coordinate_point_two)
     (coordinate_point_two - coordinate_point_one).abs
