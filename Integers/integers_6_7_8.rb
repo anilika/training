@@ -1,11 +1,10 @@
 module OutputData
   def print_num(num)
-    puts "Your number is #{num}."
+    puts "\nYour number is #{num}."
   end
 
   def print_ones_digit(ones)
     puts "It's ones digit is #{ones}."
-    puts
   end
 
   def print_tens_digit(tens)
@@ -16,87 +15,127 @@ module OutputData
     puts "It's hundreds digit is #{hundreds}."
   end
 
-  def print_swap_digits(num, swap_number)
-    print_num(num)
-    puts "It's swapped digits #{swap_number}."
-    puts
+  def print_thousands_digit(thousands)
+    puts "It's thousands digit is #{thousands}"
   end
 
-  def print_sum_and_product(num, sum, product)
-    print_num(num)
-    puts "Product numerals is #{product}"
-    puts "Summ numerals is #{sum}"
-    puts
+  def print_reverse_num(reverse_num)
+    puts "It's reversed digits #{reverse_num}."
+  end
+
+  def print_sum_digits(sum)
+    puts "Summ numerals is #{sum}."
+  end
+
+  def print_product_digits(product)
+    puts "Product numerals is #{product}."
+  end
+
+  def print_move_left(num_move)
+    puts "Number move left is #{num_move}."
+  end
+
+  def print_move_right(num_move)
+    puts "Number move right is #{num_move}."
+  end
+
+  def print_exchange_tens_hundreds(exchange_num)
+    puts "Number wish exchange a tens digit and a hundreds digit is #{exchange_num}"
+  end
+
+  def print_exchange_ones_tens(exchange_num)
+    puts "Number wish exchange a ones digit and a tens digit is #{exchange_num}"
   end
 end
 
 class Calculating
   include OutputData
+  attr_reader :num
 
-  def sum_numeral_num(num)
-    sum_numeral = 0
-    num.to_s.each_char do |numeral|
-      sum_numeral += numeral.to_i
+  def initialize(num)
+    @num = num.to_s
+    print_num(@num)
+  end
+
+  def get_sum_digits
+    sum_digits = 0
+    num.each_char do |digit|
+      sum_digits += digit.to_i
     end
-    sum_numeral
+    print_sum_digits(sum_digits)
   end
 
-  def product_numeral_num(num)
-    product_numeral = 1
-    num.to_s.each_char do |numeral|
-      product_numeral *= numeral.to_i
+  def get_product_digits
+    product_digits = 1
+    num.each_char do |digit|
+      product_digits *= digit.to_i
     end
-    product_numeral
+    print_product_digits(product_digits)
   end
 
-  def get_hundreds_digits(num)
-    (num.to_i % 1000) / 100
+  def get_hundreds_digits
+    print_hundreds_digit((num.to_i % 1000) / 100)
   end
 
-  def get_tens_digit(num)
-    (num.to_i % 100) / 10
+  def get_tens_digit
+    print_tens_digit((num.to_i % 100) / 10)
   end
 
-  def get_ones_digit(num)
-    num.to_i % 10
+  def get_ones_digit
+    print_ones_digit(num.to_i % 10)
   end
 
-  def sum_and_product(num)
-    sum, product = sum_numeral_num(num), product_numeral_num(num)
-    print_sum_and_product(num, sum, product)
+  def get_reverse_num
+    print_reverse_num(num.reverse)
   end
 end
 
 class TwoDigit < Calculating
-  def set_tens_ones_digit(num)
-    left_numeral, right_numeral = get_tens_digit(num), get_ones_digit(num)
-    print_num(num)
-    print_tens_digit(left_numeral)
-    print_ones_digit(right_numeral)
-  end
-
-  def swap_digits(num)
-    first_numeral, last_numeral = get_tens_digit(num), get_ones_digit(num)
-    swap_number = "#{last_numeral}#{first_numeral}".to_i
-    print_swap_digits(num, swap_number)
-  end
 end
 
 class ThreeDigit < Calculating
-  def set_left_middle_right_digit(num)
-    hundreds, tens, ones = get_hundreds_digits(num), get_tens_digit(num), get_ones_digit(num)
-    print_num(num)
-    print_hundreds_digit(hundreds)
-    print_tens_digit(tens)
-    print_ones_digit(ones)
+  def get_move_left
+    print_move_left(num[1..-1] + num[0])
+  end
+
+  def get_move_right
+    print_move_right(num[-1] + num[0...-1])
+  end
+
+  def exchange_tens_hundreds
+    print_exchange_tens_hundreds(num[1] + num[0] + num[-1])
+  end
+
+  def exchange_ones_tens
+    print_exchange_ones_tens(num[0] + num[-1] + num[1])
   end
 end
 
-my_two_digit = TwoDigit.new
-my_two_digit.set_tens_ones_digit(65)
-my_two_digit.sum_and_product(44)
-my_two_digit.swap_digits(28)
+class GreaterThreeDigit < Calculating
+  def get_thousands
+    print_thousands_digit((num.to_i % 10000) /1000)
+  end
+end
 
-my_three_digit = ThreeDigit.new
-my_three_digit.set_left_middle_right_digit(639)
-my_three_digit.sum_and_product(512)
+my_two_digit = TwoDigit.new(65)
+my_two_digit.get_tens_digit
+my_two_digit.get_ones_digit
+my_two_digit.get_sum_digits
+my_two_digit.get_product_digits
+my_two_digit.get_reverse_num
+
+my_three_digit = ThreeDigit.new(512)
+my_three_digit.get_hundreds_digits
+my_three_digit.get_tens_digit
+my_three_digit.get_ones_digit
+my_three_digit.get_sum_digits
+my_three_digit.get_product_digits
+my_three_digit.get_reverse_num
+my_three_digit.get_move_left
+my_three_digit.get_move_right
+my_three_digit.exchange_tens_hundreds
+my_three_digit.exchange_ones_tens
+
+my_big_num = GreaterThreeDigit.new(65784)
+my_big_num.get_hundreds_digits
+my_big_num.get_thousands
