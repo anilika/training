@@ -111,9 +111,9 @@ class ThreeDigit < Calculating
   end
 end
 
-class GreaterThreeDigit < Calculating
+class Greater999Digit < Calculating
   def get_thousands
-    print_thousands_digit((num.to_i % 10000) /1000)
+    print_thousands_digit((num.to_i % 10000) / 1000)
   end
 end
 
@@ -136,6 +136,6 @@ my_three_digit.get_move_right
 my_three_digit.exchange_tens_hundreds
 my_three_digit.exchange_ones_tens
 
-my_big_num = GreaterThreeDigit.new(65784)
+my_big_num = Greater999Digit.new(65784)
 my_big_num.get_hundreds_digits
 my_big_num.get_thousands

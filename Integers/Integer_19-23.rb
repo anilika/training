@@ -7,7 +7,7 @@ module SecondsConvert
     seconds / MINUTE
   end
 
-  def get_remnant_full_minutes
+  def get_remainder_full_minutes
     seconds % MINUTE
   end
 
@@ -15,7 +15,7 @@ module SecondsConvert
     seconds / HOUR
   end
 
-  def get_remnant_full_hours
+  def get_remainder_full_hours
     seconds % HOUR
   end
 end
@@ -23,11 +23,11 @@ end
 module OutputData
   attr_reader :seconds
 
-  def print_minutes_in_pass_seconds(min)
+  def print_minutes_in_passed_seconds(min)
     puts "#{min} of full minutes passed from the beginning of the day"
   end
 
-  def print_hours_in_pass_seconds(hours)
+  def print_hours_in_passed_seconds(hours)
     puts "#{hours} of full hours passed from the beginning of the day"
   end
 
@@ -52,31 +52,31 @@ class PassedTime
     @seconds = seconds.to_i
   end
 
-  def minutes_in_pass_seconds
-    print_minutes_in_pass_seconds(get_full_minutes)
+  def minutes_in_passed_seconds
+    print_minutes_in_passed_seconds(get_full_minutes)
   end
 
-  def hours_in_pass_seconds
-    print_hours_in_pass_seconds(get_full_hour)
+  def hours_in_passed_seconds
+    print_hours_in_passed_seconds(get_full_hour)
   end
 
   def seconds_passed_minute
-    print_seconds_passed_minute(get_remnant_full_minutes)
+    print_seconds_passed_minute(get_remainder_full_minutes)
   end
 
   def seconds_passed_hour
-    print_seconds_passed_hour(get_remnant_full_hours)
+    print_seconds_passed_hour(get_remainder_full_hours)
   end
 
   def minutes_passed_hour
-    minutes = get_remnant_full_hours / MINUTE
+    minutes = get_remainder_full_hours / MINUTE
     print_minutes_passed_hour(minutes)
   end
 end
 
 my_time = PassedTime.new(56407)
-my_time.minutes_in_pass_seconds
-my_time.hours_in_pass_seconds
+my_time.minutes_in_passed_seconds
+my_time.hours_in_passed_seconds
 my_time.seconds_passed_hour
 my_time.seconds_passed_minute
 my_time.minutes_passed_hour
