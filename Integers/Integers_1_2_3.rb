@@ -18,7 +18,7 @@ module SIPrefix
   end
 
   def kilobyte
-      1024
+    1024
   end
 end
 
