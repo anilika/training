@@ -46,6 +46,6 @@ class NumDaysYear < MakeCalendar
 end
 
 my_year = NumDaysYear.new("Tuesday")
-my_year.first_day_week = "Monday"
+my_year.first_day_week = "Sunday"
 my_year.show_num_day(13)
 
