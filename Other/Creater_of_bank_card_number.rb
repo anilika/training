@@ -11,7 +11,7 @@ module StorageIIN
     {"JCB" => {inn_round: [(3528..3589)], length: 16}},
     {"Maestro" => {inn_round: [50, (56..69)], length: 12}},
     {"Dankort" => { inn_round: [5019], length: 16}},
-    {"MasterCard" => {inn_round: [(51-55)], length: 16}},
+    {"MasterCard" => {inn_round: [(51..55)], length: 16}},
     {"Visa" => {inn_round: [4], length: 13}},
     {"UATP" => {inn_round: [1], length: 15}},
     {"Verve" => {inn_round: [(506099..506198), (650002..650027)], length: 16}}
