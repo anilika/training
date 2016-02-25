@@ -13,7 +13,7 @@ The winner is the first to score 3 points.\n",
   MESSAGES = {
     player_name: "Type a name for player {{num_player}}.",
     type_num: "Player {{player}}, type your number.\n",
-    game_winner: "Congratulations to the {{player}}, he scored 3 points and won."
+    game_winner: "Congratulations to player {{player}}, he scored 3 points and won."
   }
 
   def display(key, values)
@@ -96,7 +96,10 @@ class Game < Rules
         if player_num == computer_num
           @players[player].points += 1
           show(:win_round)
-          @winner = player if @players[player].points == 3
+          if @players[player].points == 3
+            @winner = player
+            nil_player_points
+          end
           break
         else
           show(:wrong)
@@ -105,6 +108,11 @@ class Game < Rules
     end
   end
 
+  def nil_player_points
+    (1..@players_num).each do |player|
+      @players[player].points = 0
+    end
+  end
 
   def set_playes_names
     (1..@players_num).each do |player|
