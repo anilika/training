@@ -1,6 +1,7 @@
 #! /usr/bin/ruby
 
 require 'timeout'
+require 'net/http'
 require 'nokogiri'
 require 'open_uri_redirections'
 
@@ -46,7 +47,7 @@ class RknTest
   def test_urls
     File.readlines(file_name).each do |line|
       url = form_url(line)
-      page = get_url_page(url)
+      next unless page = get_url_page(url)
       page_title = get_page_title(page)
       non_blocked_pages.push(url) unless titles_equal?(page_title)
     end
@@ -59,14 +60,15 @@ class RknTest
 
   def get_url_page(url)
     begin
-      timeout(1)
+      Timeout.timeout(1) {
         page = Nokogiri::HTML(open(url, :allow_redirections => :all))
-      end
-    rescue Timeout::Error, SocketError, ERR_CONNECTION_REFUSED, Errno::ECONNRESET
-      next
+      }
+    rescue Timeout::Error, SocketError, Errno::ECONNRESET
+      #ERR_CONNECTION_REFUSED
+      false
     rescue StandardError => e
       non_blocked_pages.push(url)
-      next
+      false
     end
   end
 
@@ -87,5 +89,6 @@ class RknTest
   end
 end
 
-my_rkn_data = RknData.new(ARGV)
-my_test = RknTest.new(my_rkn_data.file_name, my_rkn_data.proto)
+#my_rkn_data = RknData.new(ARGV)
+#my_test = RknTest.new(my_rkn_data.file_name, my_rkn_data.proto)
+my_test = RknTest.new('urls.txt', 'http')
